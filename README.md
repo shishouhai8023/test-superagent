@@ -19,5 +19,15 @@ pushes a branch `agent/<name>`. Review the pull request as with any contributor.
 ## Ground rules
 
 - Keep issues small and verifiable; one task per issue.
-- The agent cannot merge, force-push, or touch other repositories.
+- The agent only auto-merges small changes that meet the conditions; otherwise a person merges. It cannot force-push or touch other repositories.
 - Never paste credentials or private keys into an issue.
+
+## 使用
+
+在 issue 正文里 @dearsea 提出具体需求即可。它会在同一个 issue 下回一条确认，通常在 60 秒内受理。
+
+受理后，它会在独立分支（`agent/<name>`）上完成改动并开 PR，改动范围与验收标准以 issue 描述为准。
+
+改动少于 50 行且满足自动合并条件时会自动合并；更大的改动留给人工 review 后再合并。
+
+对结果不满意时，直接在 PR 下继续 @dearsea 说明要改什么，不要另开 issue。
